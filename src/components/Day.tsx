@@ -22,8 +22,10 @@ const Day: React.FC<Props> = (props) => {
   }
   return (
     <Center
-      border="1px"
+      borderRight="1px"
+      borderTop="1px"
       borderColor="gray.200"
+      h="160px"
       pos="relative"
       bg={isCurrentDay ? "blue.100" : "transparent"}
       color={data.holiday ? "red" : data.disable ? "gray.300" : "gray.500"}

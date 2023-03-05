@@ -19,7 +19,7 @@
       }
     },
     "systemTray": {
-      "iconPath": "icons/icon.png",
+      "iconPath": "icons/tray/2.png",
       "iconAsTemplate": true
     },
     "bundle": {
@@ -31,7 +31,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.nepali-calendar.dev",
       "targets": "all"
     },
     "security": {
