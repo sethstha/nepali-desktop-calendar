@@ -16,7 +16,14 @@ type Day = {
   holiday: boolean;
 };
 
+type DayMonthYear = {
+  year: number;
+  month: number;
+  date: number;
+  day?: number;
+};
+
 type CurrentDate = {
-  BS: IAdBs;
-  AD: IAdBs;
+  BS: DayMonthYear;
+  AD: DayMonthYear;
 };

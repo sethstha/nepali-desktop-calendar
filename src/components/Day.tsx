@@ -1,8 +1,8 @@
-import { Center, Heading, Stack, Text } from "@chakra-ui/react";
-import { invoke } from "@tauri-apps/api";
-import { IAdBs } from "nepali-date-converter/dist/types/nepali-date-helper";
-import React from "react";
-import { getNepaliDate } from "../utils/bsHelper";
+import { Center, Heading, Stack, Text } from '@chakra-ui/react';
+import { invoke } from '@tauri-apps/api';
+import { IAdBs } from 'nepali-date-converter/dist/types/nepali-date-helper';
+import React from 'react';
+import { getNepaliDate } from '../utils/bsHelper';
 
 type Props = {
   data: Day;
@@ -16,7 +16,7 @@ const Day: React.FC<Props> = (props) => {
     (isCurrentMonth && currentDate.AD.date === data.eng) || false;
 
   if (isCurrentDay) {
-    invoke("set_menu_item", {
+    invoke('set_menu_item', {
       title: getNepaliDate(currentDate.BS),
     });
   }
@@ -27,9 +27,8 @@ const Day: React.FC<Props> = (props) => {
       borderColor="gray.200"
       h="160px"
       pos="relative"
-      bg={isCurrentDay ? "blue.100" : "transparent"}
-      color={data.holiday ? "red" : data.disable ? "gray.300" : "gray.500"}
-    >
+      bg={isCurrentDay ? 'blue.100' : 'transparent'}
+      color={data.holiday ? 'red' : data.disable ? 'gray.300' : 'gray.500'}>
       <Heading>{data?.nep}</Heading>
       <Stack
         direction="column"
@@ -40,8 +39,7 @@ const Day: React.FC<Props> = (props) => {
         px="4"
         pb="2"
         spacing="0"
-        fontSize={"xs"}
-      >
+        fontSize={'xs'}>
         <Text>{data?.eng}</Text>
         <Text>{data?.event}</Text>
         <Text>{data?.tithi}</Text>

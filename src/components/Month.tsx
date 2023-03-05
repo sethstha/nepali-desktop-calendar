@@ -1,16 +1,9 @@
-import {
-  Box,
-  Center,
-  Flex,
-  Heading,
-  SimpleGrid,
-  Spacer,
-} from "@chakra-ui/react";
-import { IAdBs } from "nepali-date-converter/dist/types/nepali-date-helper";
-import { englishToNepaliNumber } from "nepali-number";
-import React from "react";
-import { bsDays } from "../utils/bsHelper";
-import Day from "./Day";
+import { Box, Center, Flex, Heading, SimpleGrid } from '@chakra-ui/react';
+import { IAdBs } from 'nepali-date-converter/dist/types/nepali-date-helper';
+import { englishToNepaliNumber } from 'nepali-number';
+import React from 'react';
+import { bsDays } from '../utils/bsHelper';
+import Day from './Day';
 
 type Props = {
   data: Month;
@@ -21,9 +14,6 @@ const Month: React.FC<Props> = (props) => {
   const { data, currentDate } = props;
   const isCurrentMonth = currentDate.BS.month === data.month || false;
 
-  if (isCurrentMonth) {
-    console.log("current month is ", data.name);
-  }
   return (
     <Box>
       <Flex justify="space-between" px="4">
@@ -35,7 +25,7 @@ const Month: React.FC<Props> = (props) => {
 
       <SimpleGrid columns={7}>
         {bsDays.map((day, i) => (
-          <Center>{day}</Center>
+          <Center key={i}>{day}</Center>
         ))}
         {data?.days?.map((day, index: number) => (
           <Day
